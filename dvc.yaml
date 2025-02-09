@@ -1,0 +1,19 @@
+stages:
+  prepare_data:
+    cmd: python download_cifar.py
+    deps:
+      - download_cifar.py
+    outs:
+      - data
+  train:
+    cmd: python main.py
+    deps:
+      - main.py
+      - data
+      - utils.py
+      - modeling/diffusion.py
+      - modeling/training.py
+      - modeling/unet.py
+      - configs/main_config.yaml
+    outs:
+      - weights.pth

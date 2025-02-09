@@ -1,0 +1,18 @@
+defaults:
+  - model: ddpm
+  - eps_model: unet
+  - dataloader: loader
+  - optim: adam
+  - _self_
+
+trainer:
+  device: 'cuda'
+  num_epochs: 5
+  random_flip: False
+  random_seed: 42
+  path_to_save_samples: './samples_dvc'
+
+logger:
+  project_name: "efdl_hw_1"
+  run_name: "dvc_test"
+  mode: "online"
