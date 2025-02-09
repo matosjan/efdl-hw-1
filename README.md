@@ -22,11 +22,11 @@
 
 ### `unet.py`
 
-* `UnetModel.forward(...):` the `temb` variable should have two fake dimensions(unsqueezed two times), so that broadcasting works when summing tensors. This bug was found because of failed tests.
+* `UnetModel.forward(...):` the `temb` variable should have two fake dimensions(unsqueezed two times), so that broadcasting works when summing tensors. This bug was found because of failed tests
 
 ## Changes in tests
 
-* After fixing all the bugs described above there was still a flapping test. So I added a seed fixing procedure to ensure that the testing is deterministic.
+* After fixing all the bugs described above there was still a flapping test. So I added a seed fixing procedure to ensure that the testing is deterministic
 * Implemented `test_training` test in `test_pipeline.py` that covers the whole training process
 
 ### Tests coverage
