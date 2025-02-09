@@ -7,12 +7,12 @@ defaults:
 
 trainer:
   device: 'cuda'
-  num_epochs: 5
+  num_epochs: 100
   random_flip: False
   random_seed: 42
-  path_to_save_samples: './samples_dvc'
+  path_to_save_samples: './samples'
 
 logger:
   project_name: "efdl_hw_1"
-  run_name: "dvc_test"
+  run_name: "default_training"
   mode: "online"

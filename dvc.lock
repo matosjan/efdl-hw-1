@@ -1,0 +1,52 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python download_cifar.py
+    deps:
+    - path: download_cifar.py
+      hash: md5
+      md5: cf381bafb7da15e8b3f7a93ed23e1139
+      size: 194
+    outs:
+    - path: data
+      hash: md5
+      md5: bc9a34f7def12ea37410b111a47882ce.dir
+      size: 713424370
+      nfiles: 18
+  train:
+    cmd: python main.py
+    deps:
+    - path: conf/config.yaml
+      hash: md5
+      md5: db750970012aae748ff7c57586d37825
+      size: 294
+    - path: data
+      hash: md5
+      md5: bc9a34f7def12ea37410b111a47882ce.dir
+      size: 713424370
+      nfiles: 18
+    - path: main.py
+      hash: md5
+      md5: 4cb6121d8887b21e9dfc0a1d6c0d8b13
+      size: 2369
+    - path: modeling/diffusion.py
+      hash: md5
+      md5: be42f0c86c66a7fd38d5bfa727cec73d
+      size: 2767
+    - path: modeling/training.py
+      hash: md5
+      md5: d1cfc6515c146b92ec7d6609cb682a9b
+      size: 1233
+    - path: modeling/unet.py
+      hash: md5
+      md5: d0f110115b57a0a5aabc971394e32f8d
+      size: 3684
+    - path: utils.py
+      hash: md5
+      md5: ec00f3c13cae083f5f451c08f57dec8f
+      size: 489
+    outs:
+    - path: weights.pth
+      hash: md5
+      md5: d18b78a4206bca7b5eadac29b19abf2c
+      size: 45465686

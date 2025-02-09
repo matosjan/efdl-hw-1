@@ -2,7 +2,6 @@ import random
 import torch
 import numpy as np
 
-# со звука
 def set_random_seed(seed):
     """
     Set random seed for model training or inference.

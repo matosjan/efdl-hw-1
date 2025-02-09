@@ -14,8 +14,6 @@ from hydra.utils import instantiate
 from utils import set_random_seed  
 from omegaconf import OmegaConf
 
-
-# @hydra.main(version_base=None, config_path="configs", config_name="main_config")
 def main():
     config = OmegaConf.load("params.yaml")
     #### wandb
@@ -27,10 +25,8 @@ def main():
         mode='online'
     )
 
-    config_filename = "config.yaml"
-    OmegaConf.save(config, config_filename)
     artifact = wandb.Artifact("config", type="config")
-    artifact.add_file(config_filename)
+    artifact.add_file("params.yaml")
     wandb.log_artifact(artifact)
     ####
 
